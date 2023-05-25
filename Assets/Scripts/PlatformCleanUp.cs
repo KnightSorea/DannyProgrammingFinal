@@ -12,9 +12,18 @@ public class PlatformCleanUp : MonoBehaviour
         }
     }
 
-   /* public void saveScore()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerPrefs.SetFloat("HighScore", 2);
-        PlayerPrefs.GetFloat("HighScore");
-    } */
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+            gm.GameOver();
+        }
+    }
+
+    /* public void saveScore()
+     {
+         PlayerPrefs.SetFloat("HighScore", 2);
+         PlayerPrefs.GetFloat("HighScore");
+     } */
 }

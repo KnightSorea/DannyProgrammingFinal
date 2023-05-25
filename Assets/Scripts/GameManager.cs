@@ -6,31 +6,38 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // TMPro
+    [Header("The Score")]
     public TextMeshProUGUI HeightUI;
     // scripts
     private PlayerController pc;
 
     // Gameobjects
+    [Header("GameObjects To Drag In")]
+    public GameObject GameOverScreen;
     public GameObject goodPlatform;
     public GameObject oneJumpPlatform;
     public GameObject badPlatform;
-    public GameObject platformTypeToSpawn;
+    private GameObject platformTypeToSpawn;
 
     // floats
     private float prevouisHighestYPlatform;
     // ints
+    [Header("How long you want each 'level' to last")]
     public int PlatformsToSpawn;
 
-    [Header("Good Platform stats")]
+    
     private int chanceForGoodPlatform;
+    [Header("Good Platform stats")]
     public int GoodPlatformMinChance;
     public int GoodPlatformMaxChance;
-    [Header("One Jump Platform stats")]
+ 
     private int chanceForOneJumpPlatform;
+    [Header("One Jump Platform stats")]
     public int OneJumpPlatFormMinChance;
     public int OneJumpPlatformMaxChance;
-    [Header("Bad Platform stats")]
+    
     private int chanceForBadPlatform;
+    [Header("Bad Platform stats")]
     public int BadPlatformMinChance;
     public int BadPlatformMaxChance;
     // Start is called before the first frame update
@@ -110,8 +117,20 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("GameOver");
-        PlayerPrefs.SetFloat("HighScore", Mathf.Round(pc.playerHighestYPos));
+        if (pc.playerHighestYPos > PlayerPrefs.GetFloat("HighScore"))
+        {
+            PlayerPrefs.SetFloat("HighScore", Mathf.Round(pc.playerHighestYPos));
+        }
+        
+        StartCoroutine(timeBeforeGoingToTitleScreen());
+        GameOverScreen.SetActive(true);
+        pc.enabled = false;
+    }
 
+    IEnumerator timeBeforeGoingToTitleScreen()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(0);
     }
 
     

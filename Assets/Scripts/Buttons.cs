@@ -8,4 +8,18 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("StartButton"))
+        {
+            StartButton();
+        }
+
+        if (Input.GetButtonDown("QuitButton"))
+        {
+            Debug.Log("Quit");
+            Application.Quit();
+        }
+    }
 }

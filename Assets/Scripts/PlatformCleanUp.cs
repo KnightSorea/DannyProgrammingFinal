@@ -6,7 +6,7 @@ public class PlatformCleanUp : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("LastPlatforms") || collision.gameObject.CompareTag("Death"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("LastPlatforms") || collision.gameObject.CompareTag("Death") || collision.gameObject.CompareTag("Spring"))
         {
             Destroy(collision.gameObject);
         }
@@ -20,10 +20,4 @@ public class PlatformCleanUp : MonoBehaviour
             gm.GameOver();
         }
     }
-
-    /* public void saveScore()
-     {
-         PlayerPrefs.SetFloat("HighScore", 2);
-         PlayerPrefs.GetFloat("HighScore");
-     } */
 }

@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    void Start()
-    {
-        Invoke(nameof(Despawn), 75f);
-    }
     void Despawn()
     {
         Destroy(gameObject);
@@ -17,6 +13,7 @@ public class Platform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && collision.relativeVelocity.y <= 0)
         {
             Activation();
+            Invoke(nameof(Despawn), 30f);
         }
     }
 

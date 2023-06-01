@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     // floats
     private float prevouisHighestYPlatform;
-    private float lastPlatformTypeSpawnedPositionX;
+    private float minRandomSpawnPos;
     // ints
     [Header("How long you want each 'level' to be")]
     public int PlatformsToSpawn;
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        minRandomSpawnPos = 0.5f;
         pc = GameObject.Find("Player").GetComponent<PlayerController>();
         spawnNextPlatForms();
     }
@@ -67,8 +68,13 @@ public class GameManager : MonoBehaviour
 
         for (int platformsSpawned = 0; platformsSpawned < PlatformsToSpawn; platformsSpawned++)
         {
-            spawnPosition.y = Random.Range(0.5f, 2.5f) + prevouisHighestYPlatform;
+            spawnPosition.y = Random.Range(minRandomSpawnPos, 2.5f) + prevouisHighestYPlatform;
             spawnPosition.x = Random.Range(-7.5f, 7.5f);
+            minRandomSpawnPos += 0.1f;
+            if(minRandomSpawnPos > 2)
+            {
+                minRandomSpawnPos = 2;
+            }
             chanceForGoodPlatform = Random.Range(GoodPlatformMinChance, GoodPlatformMaxChance);
             chanceForOneJumpPlatform = Random.Range(OneJumpPlatFormMinChance, OneJumpPlatformMaxChance);
             chanceForBadPlatform = Random.Range(BadPlatformMinChance, BadPlatformMaxChance);
@@ -111,9 +117,9 @@ public class GameManager : MonoBehaviour
         OneJumpPlatFormMinChance += 10;
         BadPlatformMinChance += 5;
         BadPlatformMaxChance += 15;
-        if (BadPlatformMinChance > 50)
+        if (BadPlatformMinChance > 75)
         {
-            BadPlatformMinChance = 50;
+            BadPlatformMinChance = 75;
         }
 
         if (BadPlatformMaxChance > 100)
@@ -121,9 +127,9 @@ public class GameManager : MonoBehaviour
             BadPlatformMaxChance = 100;
         }
 
-        if (OneJumpPlatFormMinChance > 75)
+        if (OneJumpPlatFormMinChance > 65)
         {
-            OneJumpPlatFormMinChance = 75;
+            OneJumpPlatFormMinChance = 65;
         }
 
         if (GoodPlatformMinChance < 1)

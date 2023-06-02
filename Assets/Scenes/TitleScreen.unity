@@ -460,7 +460,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: OneJumpPlatform
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7619128385203758237, guid: 116e7ae9a1b2c004f8682fbf0fd41131, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619128385203758243, guid: 116e7ae9a1b2c004f8682fbf0fd41131, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7619128385203758243, guid: 116e7ae9a1b2c004f8682fbf0fd41131, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 116e7ae9a1b2c004f8682fbf0fd41131, type: 3}
 --- !u!1001 &314456767
 PrefabInstance:
@@ -517,7 +526,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodPlatform
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2757629353218656816, guid: 8312fb9aecb714c4596430af744915dc, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5809456496779233877, guid: 8312fb9aecb714c4596430af744915dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5809456496779233877, guid: 8312fb9aecb714c4596430af744915dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8312fb9aecb714c4596430af744915dc, type: 3}
 --- !u!1 &432306236
 GameObject:
@@ -1578,9 +1596,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5699017920757480373, guid: d8bfee023982821458dec84ff5da16fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1582437963328755630, guid: d8bfee023982821458dec84ff5da16fc, type: 3}
       propertyPath: m_Name
       value: SpringPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582437963328755630, guid: d8bfee023982821458dec84ff5da16fc, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1582437963328755635, guid: d8bfee023982821458dec84ff5da16fc, type: 3}
       propertyPath: m_RootOrder
@@ -1626,7 +1652,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5699017920757480373, guid: d8bfee023982821458dec84ff5da16fc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d8bfee023982821458dec84ff5da16fc, type: 3}
 --- !u!1 &1705171951
 GameObject:
@@ -1774,6 +1801,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BadPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 1472162346849057364, guid: c9bed48aa2f5d5e42ab90f7b8fc6af22, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472162346849057365, guid: c9bed48aa2f5d5e42ab90f7b8fc6af22, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1472162346849057375, guid: c9bed48aa2f5d5e42ab90f7b8fc6af22, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1818,7 +1853,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1472162346849057365, guid: c9bed48aa2f5d5e42ab90f7b8fc6af22, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c9bed48aa2f5d5e42ab90f7b8fc6af22, type: 3}
 --- !u!1 &2035146441
 GameObject:

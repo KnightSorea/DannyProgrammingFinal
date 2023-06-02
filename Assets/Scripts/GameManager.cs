@@ -24,11 +24,16 @@ public class GameManager : MonoBehaviour
     // floats
     private float prevouisHighestYPlatform;
     private float minRandomSpawnPos;
+
+    [Header("Platform Move Stats")]
+    public static float platformMoveSpeed;
     // ints
+    public static int chanceToBeat;
+    
     [Header("How long you want each 'level' to be")]
     public int PlatformsToSpawn;
 
-    
+
     private int chanceForGoodPlatform;
     [Header("Good Platform stats")]
     public int GoodPlatformMinChance;
@@ -46,6 +51,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        platformMoveSpeed = 0.5f;
+        chanceToBeat = 95;
         minRandomSpawnPos = 0.5f;
         pc = GameObject.Find("Player").GetComponent<PlayerController>();
         spawnNextPlatForms();
@@ -110,7 +117,16 @@ public class GameManager : MonoBehaviour
             }
             prevouisHighestYPlatform = spawnPosition.y;
             lastPlatformTypeSpawned = platformTypeToSpawn;
-            
+            chanceToBeat -= 1;
+            platformMoveSpeed += 0.005f;
+            if(chanceToBeat < 25)
+            {
+                chanceToBeat = 25;
+            }
+            if (platformMoveSpeed > 3)
+            {
+                platformMoveSpeed = 3;
+            }
         }
         // Game will get harder over time
         GoodPlatformMinChance -= 10;

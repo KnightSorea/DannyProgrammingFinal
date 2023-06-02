@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpringPlatform : Platform
 {
     private PlayerController player;
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
